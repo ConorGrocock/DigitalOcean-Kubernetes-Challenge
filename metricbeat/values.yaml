@@ -240,10 +240,14 @@ managedServiceAccount: true
 clusterRoleRules:
   - apiGroups: [""]
     resources:
-      - nodes
-      - namespaces
-      - events
-      - pods
+    - namespaces
+    - pods
+    - events
+    - deployments
+    - nodes
+    - nodes/stats
+    - nodes/metrics
+    - replicasets
     verbs: ["get", "list", "watch"]
   - apiGroups: ["extensions"]
     resources:
