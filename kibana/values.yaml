@@ -104,8 +104,7 @@ extraVolumes:
   # - name: extras
   #   emptyDir: {}
 
-extraVolumeMounts:
-  []
+extraVolumeMounts: []
   # - name: extras
   #   mountPath: /usr/share/extras
   #   readOnly: true
