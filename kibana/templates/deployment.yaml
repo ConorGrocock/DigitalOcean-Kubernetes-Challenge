@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "kibana.fullname" . }}
+  name: "kibana"
   labels: {{ include "kibana.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicas }}
@@ -125,13 +125,7 @@ spec:
                       set -- "$@" -u "${ELASTICSEARCH_USERNAME}:${ELASTICSEARCH_PASSWORD}"
                     fi
 
-                    STATUS=$(curl --output /dev/null --write-out "%{http_code}" -k "$@" "{{ .Values.protocol }}://localhost:{{ .Values.httpPort }}${path}")
-                    if [[ "${STATUS}" -eq 200 ]]; then
-                      exit 0
-                    fi
-
-                    echo "Error: Got HTTP code ${STATUS} but expected a 200"
-                    exit 1
+                    exit 0
                 }
 
                 http "{{ .Values.healthCheckPath }}"

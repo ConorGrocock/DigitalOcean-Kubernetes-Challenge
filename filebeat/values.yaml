@@ -69,7 +69,7 @@ daemonset:
       memory: "100Mi"
     limits:
       cpu: "1000m"
-      memory: "200Mi"
+      memory: "400Mi"
   tolerations: []
 
 deployment:
@@ -134,7 +134,7 @@ deployment:
       memory: "100Mi"
     limits:
       cpu: "1000m"
-      memory: "200Mi"
+      memory: "400Mi"
   tolerations: []
 
 # Replicas being used for the filebeat deployment
